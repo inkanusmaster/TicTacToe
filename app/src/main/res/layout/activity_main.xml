@@ -33,8 +33,10 @@
             android:layout_height="120dp"
             android:layout_margin="10dp"
             android:layout_marginBottom="20dp"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/red" />
+            android:onClick="playToken"
+            android:clickable="true"
+            app:srcCompat="@drawable/red"
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/col_1_row_0"
@@ -42,8 +44,10 @@
             android:layout_height="120dp"
             android:layout_margin="10dp"
             android:layout_marginBottom="20dp"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/red" />
+            android:onClick="playToken"
+            android:clickable="true"
+            app:srcCompat="@drawable/red"
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/col_2_row_0"
@@ -51,32 +55,40 @@
             android:layout_height="120dp"
             android:layout_margin="10dp"
             android:layout_marginBottom="20dp"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/red" />
+            android:onClick="playToken"
+            android:clickable="true"
+            app:srcCompat="@drawable/red"
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/col_0_row_1"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_margin="10dp"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/red" />
+            android:onClick="playToken"
+            android:clickable="true"
+            app:srcCompat="@drawable/red"
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/col_1_row_1"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_margin="10dp"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/red" />
+            android:onClick="playToken"
+            android:clickable="true"
+            app:srcCompat="@drawable/red"
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/col_2_row_1"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_margin="10dp"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/red" />
+            android:onClick="playToken"
+            android:clickable="true"
+            app:srcCompat="@drawable/red"
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/col_0_row_2"
@@ -84,8 +96,10 @@
             android:layout_height="120dp"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/red" />
+            android:onClick="playToken"
+            android:clickable="true"
+            app:srcCompat="@drawable/red"
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/col_1_row_2"
@@ -93,8 +107,10 @@
             android:layout_height="120dp"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/red" />
+            android:onClick="playToken"
+            android:clickable="true"
+            app:srcCompat="@drawable/red"
+            android:focusable="true" />
 
         <ImageView
             android:id="@+id/col_2_row_2"
@@ -102,7 +118,9 @@
             android:layout_height="120dp"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/red" />
+            android:onClick="playToken"
+            android:clickable="true"
+            app:srcCompat="@drawable/red"
+            android:focusable="true" />
     </android.support.v7.widget.GridLayout>
 </android.support.constraint.ConstraintLayout>
