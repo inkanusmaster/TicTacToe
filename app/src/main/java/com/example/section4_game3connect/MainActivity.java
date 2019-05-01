@@ -11,6 +11,11 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    boolean isYellowTurn = true;
+
+    int redPoints = 0;
+    int yellowPoints = 0;
+
     ImageView col_0_row_0;
     ImageView col_1_row_0;
     ImageView col_2_row_0;
@@ -20,7 +25,11 @@ public class MainActivity extends AppCompatActivity {
     ImageView col_0_row_2;
     ImageView col_1_row_2;
     ImageView col_2_row_2;
-    boolean isYellowTurn = true;
+
+    protected void resetPoints(){
+        redPoints = 0;
+        yellowPoints = 0;
+    }
 
     protected void resetGame(){
         col_0_row_0=findViewById(R.id.col_0_row_0);
@@ -361,5 +370,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         resetGame();
+        resetPoints();
     }
 }
