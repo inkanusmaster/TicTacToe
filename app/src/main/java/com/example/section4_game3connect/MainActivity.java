@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     col_0_row_0.setImageResource(R.drawable.yellow);
                     col_0_row_0.animate().translationYBy(2000).setDuration(1000);
                     col_0_row_0.setTag("yellow");
+                    checkGameState();
                 }
             }
 
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     col_1_row_0.setImageResource(R.drawable.yellow);
                     col_1_row_0.animate().translationYBy(2000).setDuration(1000);
                     col_1_row_0.setTag("yellow");
+                    checkGameState();
                 }
             }
 
@@ -92,9 +94,10 @@ public class MainActivity extends AppCompatActivity {
                     isYellowTurn = false;
                     col_2_row_0.setTranslationY(-2000);
                     col_2_row_0.setAlpha(1.0f);
-                    col_2_row_0.setImageResource(R.drawable.red);
+                    col_2_row_0.setImageResource(R.drawable.yellow);
                     col_2_row_0.animate().translationYBy(2000).setDuration(1000);
                     col_2_row_0.setTag("yellow");
+                    checkGameState();
                 }
             }
 
@@ -109,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
                     col_0_row_1.setImageResource(R.drawable.yellow);
                     col_0_row_1.animate().translationYBy(2000).setDuration(1000);
                     col_0_row_1.setTag("yellow");
+                    checkGameState();
                 }
             }
 
@@ -123,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
                     col_1_row_1.setImageResource(R.drawable.yellow);
                     col_1_row_1.animate().translationYBy(2000).setDuration(1000);
                     col_1_row_1.setTag("yellow");
+                    checkGameState();
                 }
             }
 
@@ -137,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
                     col_2_row_1.setImageResource(R.drawable.yellow);
                     col_2_row_1.animate().translationYBy(2000).setDuration(1000);
                     col_2_row_1.setTag("yellow");
+                    checkGameState();
                 }
             }
 
@@ -151,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
                     col_0_row_2.setImageResource(R.drawable.yellow);
                     col_0_row_2.animate().translationYBy(2000).setDuration(1000);
                     col_0_row_2.setTag("yellow");
+                    checkGameState();
                 }
             }
 
@@ -165,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
                     col_1_row_2.setImageResource(R.drawable.yellow);
                     col_1_row_2.animate().translationYBy(2000).setDuration(1000);
                     col_1_row_2.setTag("yellow");
+                    checkGameState();
                 }
             }
 
@@ -179,6 +187,7 @@ public class MainActivity extends AppCompatActivity {
                     col_2_row_2.setImageResource(R.drawable.yellow);
                     col_2_row_2.animate().translationYBy(2000).setDuration(1000);
                     col_2_row_2.setTag("yellow");
+                    checkGameState();
                 }
             }
 
@@ -195,6 +204,7 @@ public class MainActivity extends AppCompatActivity {
                     col_0_row_0.setImageResource(R.drawable.red);
                     col_0_row_0.animate().translationYBy(2000).setDuration(1000);
                     col_0_row_0.setTag("red");
+                    checkGameState();
                 }
             }
 
@@ -210,6 +220,7 @@ public class MainActivity extends AppCompatActivity {
                     col_1_row_0.setImageResource(R.drawable.red);
                     col_1_row_0.animate().translationYBy(2000).setDuration(1000);
                     col_1_row_0.setTag("red");
+                    checkGameState();
                 }
             }
 
@@ -224,6 +235,7 @@ public class MainActivity extends AppCompatActivity {
                     col_2_row_0.setImageResource(R.drawable.red);
                     col_2_row_0.animate().translationYBy(2000).setDuration(1000);
                     col_2_row_0.setTag("red");
+                    checkGameState();
                 }
             }
 
@@ -238,6 +250,7 @@ public class MainActivity extends AppCompatActivity {
                     col_0_row_1.setImageResource(R.drawable.red);
                     col_0_row_1.animate().translationYBy(2000).setDuration(1000);
                     col_0_row_1.setTag("red");
+                    checkGameState();
                 }
             }
 
@@ -252,6 +265,7 @@ public class MainActivity extends AppCompatActivity {
                     col_1_row_1.setImageResource(R.drawable.red);
                     col_1_row_1.animate().translationYBy(2000).setDuration(1000);
                     col_1_row_1.setTag("red");
+                    checkGameState();
                 }
             }
 
@@ -266,6 +280,7 @@ public class MainActivity extends AppCompatActivity {
                     col_2_row_1.setImageResource(R.drawable.red);
                     col_2_row_1.animate().translationYBy(2000).setDuration(1000);
                     col_2_row_1.setTag("red");
+                    checkGameState();
                 }
             }
 
@@ -280,6 +295,7 @@ public class MainActivity extends AppCompatActivity {
                     col_0_row_2.setImageResource(R.drawable.red);
                     col_0_row_2.animate().translationYBy(2000).setDuration(1000);
                     col_0_row_2.setTag("red");
+                    checkGameState();
                 }
             }
 
@@ -294,6 +310,7 @@ public class MainActivity extends AppCompatActivity {
                     col_1_row_2.setImageResource(R.drawable.red);
                     col_1_row_2.animate().translationYBy(2000).setDuration(1000);
                     col_1_row_2.setTag("red");
+                    checkGameState();
                 }
             }
 
@@ -308,13 +325,35 @@ public class MainActivity extends AppCompatActivity {
                     col_2_row_2.setImageResource(R.drawable.red);
                     col_2_row_2.animate().translationYBy(2000).setDuration(1000);
                     col_2_row_2.setTag("red");
+                    checkGameState();
                 }
             }
         }
     }
 
     public void checkGameState(){
-
+        if(((col_0_row_0.getTag()=="yellow") && (col_1_row_0.getTag()=="yellow") && (col_2_row_0.getTag()=="yellow")) ||
+        ((col_0_row_1.getTag()=="yellow") && (col_1_row_1.getTag()=="yellow") && (col_2_row_1.getTag()=="yellow")) ||
+        ((col_0_row_2.getTag()=="yellow") && (col_1_row_2.getTag()=="yellow") && (col_2_row_2.getTag()=="yellow")) ||
+        ((col_0_row_0.getTag()=="yellow") && (col_0_row_1.getTag()=="yellow") && (col_0_row_2.getTag()=="yellow")) ||
+        ((col_1_row_0.getTag()=="yellow") && (col_1_row_1.getTag()=="yellow") && (col_1_row_2.getTag()=="yellow")) ||
+        ((col_2_row_0.getTag()=="yellow") && (col_2_row_1.getTag()=="yellow") && (col_2_row_2.getTag()=="yellow")) ||
+        ((col_0_row_0.getTag()=="yellow") && (col_1_row_1.getTag()=="yellow") && (col_2_row_2.getTag()=="yellow")) ||
+        ((col_2_row_0.getTag()=="yellow") && (col_1_row_1.getTag()=="yellow") && (col_0_row_2.getTag()=="yellow")))
+        {
+            Toast.makeText(this, "YELLOW WON!", Toast.LENGTH_SHORT).show();
+        } else
+        if(((col_0_row_0.getTag()=="red") && (col_1_row_0.getTag()=="red") && (col_2_row_0.getTag()=="red")) ||
+        ((col_0_row_1.getTag()=="red") && (col_1_row_1.getTag()=="red") && (col_2_row_1.getTag()=="red")) ||
+        ((col_0_row_2.getTag()=="red") && (col_1_row_2.getTag()=="red") && (col_2_row_2.getTag()=="red")) ||
+        ((col_0_row_0.getTag()=="red") && (col_0_row_1.getTag()=="red") && (col_0_row_2.getTag()=="red")) ||
+        ((col_1_row_0.getTag()=="red") && (col_1_row_1.getTag()=="red") && (col_1_row_2.getTag()=="red")) ||
+        ((col_2_row_0.getTag()=="red") && (col_2_row_1.getTag()=="red") && (col_2_row_2.getTag()=="red")) ||
+        ((col_0_row_0.getTag()=="red") && (col_1_row_1.getTag()=="red") && (col_2_row_2.getTag()=="red")) ||
+        ((col_2_row_0.getTag()=="red") && (col_1_row_1.getTag()=="red") && (col_0_row_2.getTag()=="red")))
+        {
+            Toast.makeText(this, "RED WON!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
