@@ -1,21 +1,22 @@
 package com.example.section4_game3connect;
 
-import android.support.annotation.DrawableRes;
+import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
 
     boolean isYellowTurn = true;
-
     int redPoints = 0;
     int yellowPoints = 0;
-
+    TextView yellowPointsTextView;
+    TextView redPointsTextView;
     ImageView col_0_row_0;
     ImageView col_1_row_0;
     ImageView col_2_row_0;
@@ -26,12 +27,11 @@ public class MainActivity extends AppCompatActivity {
     ImageView col_1_row_2;
     ImageView col_2_row_2;
 
-    protected void resetPoints(){
-        redPoints = 0;
-        yellowPoints = 0;
-    }
 
-    protected void resetGame(){
+
+
+    @SuppressLint("SetTextI18n")
+    public void resetGame(View view){
         col_0_row_0=findViewById(R.id.col_0_row_0);
         col_0_row_0.setAlpha(0.0f);
         col_0_row_0.setTag("empty");
@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         col_2_row_2=findViewById(R.id.col_2_row_2);
         col_2_row_2.setAlpha(0.0f);
         col_2_row_2.setTag("empty");
+        setClicking(true);
+        displayPoints();
     }
 
     public void playToken(View view){
@@ -340,36 +342,86 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public boolean chartIsFilled(){
+        return (col_0_row_0.getTag() != "empty") && (col_1_row_0.getTag() != "empty") && (col_2_row_0.getTag() != "empty") &&
+                (col_0_row_1.getTag() != "empty") && (col_1_row_1.getTag() != "empty") && (col_2_row_1.getTag() != "empty") &&
+                (col_0_row_2.getTag() != "empty") && (col_1_row_2.getTag() != "empty") && (col_2_row_2.getTag() != "empty");
+    }
+
+    public boolean yellowHasWon(){
+       return ((col_0_row_0.getTag()=="yellow") && (col_1_row_0.getTag()=="yellow") && (col_2_row_0.getTag()=="yellow")) ||
+                ((col_0_row_1.getTag()=="yellow") && (col_1_row_1.getTag()=="yellow") && (col_2_row_1.getTag()=="yellow")) ||
+                ((col_0_row_2.getTag()=="yellow") && (col_1_row_2.getTag()=="yellow") && (col_2_row_2.getTag()=="yellow")) ||
+                ((col_0_row_0.getTag()=="yellow") && (col_0_row_1.getTag()=="yellow") && (col_0_row_2.getTag()=="yellow")) ||
+                ((col_1_row_0.getTag()=="yellow") && (col_1_row_1.getTag()=="yellow") && (col_1_row_2.getTag()=="yellow")) ||
+                ((col_2_row_0.getTag()=="yellow") && (col_2_row_1.getTag()=="yellow") && (col_2_row_2.getTag()=="yellow")) ||
+                ((col_0_row_0.getTag()=="yellow") && (col_1_row_1.getTag()=="yellow") && (col_2_row_2.getTag()=="yellow")) ||
+                ((col_2_row_0.getTag()=="yellow") && (col_1_row_1.getTag()=="yellow") && (col_0_row_2.getTag()=="yellow"));
+    }
+
+    public boolean redHasWon(){
+       return ((col_0_row_0.getTag()=="red") && (col_1_row_0.getTag()=="red") && (col_2_row_0.getTag()=="red")) ||
+                ((col_0_row_1.getTag()=="red") && (col_1_row_1.getTag()=="red") && (col_2_row_1.getTag()=="red")) ||
+                ((col_0_row_2.getTag()=="red") && (col_1_row_2.getTag()=="red") && (col_2_row_2.getTag()=="red")) ||
+                ((col_0_row_0.getTag()=="red") && (col_0_row_1.getTag()=="red") && (col_0_row_2.getTag()=="red")) ||
+                ((col_1_row_0.getTag()=="red") && (col_1_row_1.getTag()=="red") && (col_1_row_2.getTag()=="red")) ||
+                ((col_2_row_0.getTag()=="red") && (col_2_row_1.getTag()=="red") && (col_2_row_2.getTag()=="red")) ||
+                ((col_0_row_0.getTag()=="red") && (col_1_row_1.getTag()=="red") && (col_2_row_2.getTag()=="red")) ||
+                ((col_2_row_0.getTag()=="red") && (col_1_row_1.getTag()=="red") && (col_0_row_2.getTag()=="red"));
+    }
+
+    public void setClicking(boolean x){
+        col_0_row_0.setClickable(x);
+        col_1_row_0.setClickable(x);
+        col_2_row_0.setClickable(x);
+        col_0_row_1.setClickable(x);
+        col_1_row_1.setClickable(x);
+        col_2_row_1.setClickable(x);
+        col_0_row_2.setClickable(x);
+        col_1_row_2.setClickable(x);
+        col_2_row_2.setClickable(x);
+    }
+
+    public void resetPoints(View view){
+        redPoints = 0;
+        yellowPoints = 0;
+        displayPoints();
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void displayPoints(){
+        yellowPointsTextView = findViewById(R.id.yellowPointsTextView);
+        redPointsTextView = findViewById(R.id.redPointsTextView);
+        yellowPointsTextView.setText("Yellow: "+yellowPoints);
+        redPointsTextView.setText("Red: "+redPoints);
+    }
+
     public void checkGameState(){
-        if(((col_0_row_0.getTag()=="yellow") && (col_1_row_0.getTag()=="yellow") && (col_2_row_0.getTag()=="yellow")) ||
-        ((col_0_row_1.getTag()=="yellow") && (col_1_row_1.getTag()=="yellow") && (col_2_row_1.getTag()=="yellow")) ||
-        ((col_0_row_2.getTag()=="yellow") && (col_1_row_2.getTag()=="yellow") && (col_2_row_2.getTag()=="yellow")) ||
-        ((col_0_row_0.getTag()=="yellow") && (col_0_row_1.getTag()=="yellow") && (col_0_row_2.getTag()=="yellow")) ||
-        ((col_1_row_0.getTag()=="yellow") && (col_1_row_1.getTag()=="yellow") && (col_1_row_2.getTag()=="yellow")) ||
-        ((col_2_row_0.getTag()=="yellow") && (col_2_row_1.getTag()=="yellow") && (col_2_row_2.getTag()=="yellow")) ||
-        ((col_0_row_0.getTag()=="yellow") && (col_1_row_1.getTag()=="yellow") && (col_2_row_2.getTag()=="yellow")) ||
-        ((col_2_row_0.getTag()=="yellow") && (col_1_row_1.getTag()=="yellow") && (col_0_row_2.getTag()=="yellow")))
+        if(yellowHasWon())
         {
+            yellowPoints++;
+            setClicking(false);
             Toast.makeText(this, "YELLOW WON!", Toast.LENGTH_SHORT).show();
         } else
-        if(((col_0_row_0.getTag()=="red") && (col_1_row_0.getTag()=="red") && (col_2_row_0.getTag()=="red")) ||
-        ((col_0_row_1.getTag()=="red") && (col_1_row_1.getTag()=="red") && (col_2_row_1.getTag()=="red")) ||
-        ((col_0_row_2.getTag()=="red") && (col_1_row_2.getTag()=="red") && (col_2_row_2.getTag()=="red")) ||
-        ((col_0_row_0.getTag()=="red") && (col_0_row_1.getTag()=="red") && (col_0_row_2.getTag()=="red")) ||
-        ((col_1_row_0.getTag()=="red") && (col_1_row_1.getTag()=="red") && (col_1_row_2.getTag()=="red")) ||
-        ((col_2_row_0.getTag()=="red") && (col_2_row_1.getTag()=="red") && (col_2_row_2.getTag()=="red")) ||
-        ((col_0_row_0.getTag()=="red") && (col_1_row_1.getTag()=="red") && (col_2_row_2.getTag()=="red")) ||
-        ((col_2_row_0.getTag()=="red") && (col_1_row_1.getTag()=="red") && (col_0_row_2.getTag()=="red")))
+        if(redHasWon())
         {
+            redPoints++;
+            setClicking(false);
+
             Toast.makeText(this, "RED WON!", Toast.LENGTH_SHORT).show();
+        } else
+        if (chartIsFilled()) {
+            setClicking(false);
+            Toast.makeText(this, "DRAW!", Toast.LENGTH_SHORT).show();
         }
+        displayPoints();
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        resetGame();
-        resetPoints();
+        resetGame(getCurrentFocus());
+        resetPoints(getCurrentFocus());
     }
 }
