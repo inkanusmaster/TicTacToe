@@ -1,6 +1,7 @@
 package com.example.section4_game3connect;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -63,7 +64,10 @@ public class MainActivity extends AppCompatActivity {
         displayPoints();
     }
 
+    @SuppressLint("SetTextI18n")
     public void playToken(View view){
+
+        TextView playerTurn = findViewById(R.id.playerTurnTextView);
 
         if (isYellowTurn){
 
@@ -72,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_0_row_0.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.RED);
+                    playerTurn.setText("Red turn!");
                     isYellowTurn = false;
                     col_0_row_0.setTranslationY(-2000);
                     col_0_row_0.setAlpha(1.0f);
@@ -87,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_1_row_0.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.RED);
+                    playerTurn.setText("Red turn!");
                     isYellowTurn = false;
                     col_1_row_0.setTranslationY(-2000);
                     col_1_row_0.setAlpha(1.0f);
@@ -102,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_2_row_0.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.RED);
+                    playerTurn.setText("Red turn!");
                     isYellowTurn = false;
                     col_2_row_0.setTranslationY(-2000);
                     col_2_row_0.setAlpha(1.0f);
@@ -117,6 +127,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_0_row_1.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.RED);
+                    playerTurn.setText("Red turn!");
                     isYellowTurn = false;
                     col_0_row_1.setTranslationY(-2000);
                     col_0_row_1.setAlpha(1.0f);
@@ -132,6 +144,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_1_row_1.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.RED);
+                    playerTurn.setText("Red turn!");
                     isYellowTurn = false;
                     col_1_row_1.setTranslationY(-2000);
                     col_1_row_1.setAlpha(1.0f);
@@ -147,6 +161,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_2_row_1.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.RED);
+                    playerTurn.setText("Red turn!");
                     isYellowTurn = false;
                     col_2_row_1.setTranslationY(-2000);
                     col_2_row_1.setAlpha(1.0f);
@@ -162,6 +178,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_0_row_2.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.RED);
+                    playerTurn.setText("Red turn!");
                     isYellowTurn = false;
                     col_0_row_2.setTranslationY(-2000);
                     col_0_row_2.setAlpha(1.0f);
@@ -177,6 +195,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_1_row_2.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.RED);
+                    playerTurn.setText("Red turn!");
                     isYellowTurn = false;
                     col_1_row_2.setTranslationY(-2000);
                     col_1_row_2.setAlpha(1.0f);
@@ -192,6 +212,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_2_row_2.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.RED);
+                    playerTurn.setText("Red turn!");
                     isYellowTurn = false;
                     col_2_row_2.setTranslationY(-2000);
                     col_2_row_2.setAlpha(1.0f);
@@ -209,6 +231,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_0_row_0.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.YELLOW);
+                    playerTurn.setText("Yellow turn!");
                     isYellowTurn = true;
                     col_0_row_0.setTranslationY(-2000);
                     col_0_row_0.setAlpha(1.0f);
@@ -224,7 +248,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_1_row_0.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
-                    Log.i("INFORMACJA", "RED TOKEN ON CHART!");
+                    playerTurn.setTextColor(Color.YELLOW);
+                    playerTurn.setText("Yellow turn!");
                     isYellowTurn = true;
                     col_1_row_0.setTranslationY(-2000);
                     col_1_row_0.setAlpha(1.0f);
@@ -240,6 +265,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_2_row_0.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.YELLOW);
+                    playerTurn.setText("Yellow turn!");
                     isYellowTurn = true;
                     col_2_row_0.setTranslationY(-2000);
                     col_2_row_0.setAlpha(1.0f);
@@ -255,6 +282,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_0_row_1.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.YELLOW);
+                    playerTurn.setText("Yellow turn!");
                     isYellowTurn = true;
                     col_0_row_1.setTranslationY(-2000);
                     col_0_row_1.setAlpha(1.0f);
@@ -270,6 +299,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_1_row_1.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.YELLOW);
+                    playerTurn.setText("Yellow turn!");
                     isYellowTurn = true;
                     col_1_row_1.setTranslationY(-2000);
                     col_1_row_1.setAlpha(1.0f);
@@ -285,6 +316,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_2_row_1.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.YELLOW);
+                    playerTurn.setText("Yellow turn!");
                     isYellowTurn = true;
                     col_2_row_1.setTranslationY(-2000);
                     col_2_row_1.setAlpha(1.0f);
@@ -300,6 +333,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_0_row_2.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.YELLOW);
+                    playerTurn.setText("Yellow turn!");
                     isYellowTurn = true;
                     col_0_row_2.setTranslationY(-2000);
                     col_0_row_2.setAlpha(1.0f);
@@ -315,6 +350,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_1_row_2.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.YELLOW);
+                    playerTurn.setText("Yellow turn!");
                     isYellowTurn = true;
                     col_1_row_2.setTranslationY(-2000);
                     col_1_row_2.setAlpha(1.0f);
@@ -330,6 +367,8 @@ public class MainActivity extends AppCompatActivity {
                 if(col_2_row_2.getTag()!="empty") {
                     Toast.makeText(this, "Choose other field!", Toast.LENGTH_SHORT).show();
                 } else {
+                    playerTurn.setTextColor(Color.YELLOW);
+                    playerTurn.setText("Yellow turn!");
                     isYellowTurn = true;
                     col_2_row_2.setTranslationY(-2000);
                     col_2_row_2.setAlpha(1.0f);
