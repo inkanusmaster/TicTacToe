@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.section4_game3connect"
+        applicationId "com.example_fury_package.tictactoe_fury_package"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1

@@ -1,10 +1,9 @@
-package com.example.section4_game3connect;
+package com.example_fury_package.tictactoe_fury_package;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
